@@ -1,0 +1,159 @@
+<div>
+    <a href="/Kanbas/Courses/Settings/Course Details/screen.html"> Course Details  </a>|  
+    <a href="#">Sections  </a>|
+    <a href="/Kanbas/Courses/Settings/Navigation/screen.html">Navigation  </a>|
+    <a href="#">Apps  </a>|
+    <a href="#">Feature Options  </a>|
+    <a href="#">Integrations  </a>|
+    <hr>
+
+    <h2>
+        Course Details
+    </h2>
+
+    <form id="course-details">
+        <label for="wd-image-name" style="font-weight: bold; margin: 8px;">Image:</label>  
+        <input id="wd-image-name" type="file" />
+        <br>
+
+        <label for="wd-course-name" style="font-weight: bold; margin: 8px;">Name:</label>
+         CS5610 12631 Web Development SEC 07 Spring 2024[BOS-1-TR]
+        <br>
+
+        <label for="wd-course-code" style="font-weight: bold; margin: 8px;">Course Code:</label>
+        CS5610.12631.202410 
+        <br>
+
+        <label for="wd-blueprint" style="font-weight: bold; margin: 8px;">Blueprint Course :</label>
+        No
+        <br>
+
+        <label for="wd-course-template" style="font-weight: bold; margin: 8px;">Course Template :</label>
+        <input type="checkbox" id="wd-course-template">
+        <label for="wd-course-template">Enable course as a Course Template</label> <br/>
+        </select>
+
+        <label for="wd-time-zone" style="font-weight: bold; margin: 8px;">Time Zone :</label>
+                <select id="wd-time-zone">
+                    <option id="wd-time-zone" value="western">Indian Standard Time</option>
+                    <option id="wd-time-zone" selected value="eastern">Eastern Time(US and Canada) (-05:00/04:00)</option>
+                </select>
+        <br>
+
+        <label for="wd-sis-id" style="font-weight: bold; margin: 8px;">SIS ID :</label>
+        CS5610.12631.202410 
+        <br>
+
+        <label for="wd-sub-acc" style="font-weight: bold; margin: 8px;">Subaccount :</label>
+        <a href="#">CS Graduate </a>
+        <br>
+
+        <label for="wd-term" style="font-weight: bold; margin: 8px;">Term :</label>
+        202410_7 Spring 2024 Semester Full Term
+        <br>
+
+        <label for="wd-participation" style="font-weight: bold; margin: 8px;">Participation :</label>
+            <select id="wd-participation">
+                <option id="wd-participation" value="fall2024">Fall 2024</option>
+                <option id="wd-participation" selected value="Term">Term</option>
+                <option id="wd-participation" value="summer2024">Summer 2024</option>
+            </select>
+        <br>
+
+        <label for="wd-start-date" style="font-weight: bold; margin: 8px;">Start Date :</label>
+        <input type="date" id="wd-start-date">
+        <br>
+
+        <label for="wd-end-date" style="font-weight: bold; margin: 8px;">End Date :</label>
+        <input type="date" id="wd-end-date">
+        <br>
+
+        <input type="checkbox" id="wd-participation" style="margin-left: 8px;">
+        Restrict students from viewing course before start date <br/>
+        </select>
+
+        <input type="checkbox" id="wd-participation" style="margin-left: 8px;">
+        Restrict students from viewing course after end date <br/>
+        </select>
+        <br>
+
+        <label for="wd-due-time" style="font-weight: bold; margin-top: 8px; margin-left: 8px;">Default due time :</label>
+            <select id="wd-due-time">
+                <option id="wd-due-time" selected value="midnight">Account default (11:59pm)</option>
+                <option id="wd-due-time" value="9">9 pm</option>    
+            </select>
+            <p style="font-size: 0.67em; margin-left: 8px; margin-top: 0;">This influences the user interface for setting due dates. It does not change the time due for any existing assignments.</p>
+        
+        <label for="wd-language" style="font-weight: bold;  margin-left: 8px;">Language :</label>
+            <select id="wd-language">
+                <option id="wd-language" selected value=" ">Not set (user-configurable, defaults to English)</option>
+                <option id="wd-language" value="spanish"> Spanish</option> 
+                <option id="wd-language" value="hindi"> Hindi</option> 
+                <option id="wd-language" value="french"> French</option>    
+            </select>
+        <p style="font-size: 0.67em; margin-left: 8px; margin-top: 0;">This will override any user/system language preferences. This is only recommended for foreign language courses.</p>
+
+        <label for="wd-file-storage" style="font-weight: bold; margin: 8px;">File Storage :</label>
+        1000 Megabytes
+        <br>
+
+        <label for="wd-large-course" style="font-weight: bold; margin: 8px;">Large Course :</label>
+        <input type="checkbox" id="wd-large-course">
+        <label for="wd-large-course">Launch Speed Grader Filtered by Student Group</label> <br/>
+        </select>
+
+        <label for="wd-grading-scheme" style="font-weight: bold; margin: 8px;">Grading Scheme :</label>
+        <input type="checkbox" id="wd-grading-scheme">
+        <label for="wd-grading-scheme">Enable course grading scheme</label> <br/>
+        </select>
+        
+        <label for="wd-license" style="font-weight: bold;  margin-left: 8px;">Language :</label>
+            <select id="wd-license">
+                <option id="wd-license" selected value="private">Private (Copyrighted) </option>
+                <option id="wd-license" value="public"> Public</option>     
+            </select>
+        <br>
+
+        <div style="margin-left: 8px;">
+            <label for="wd-file-copy" style="font-weight: bold;">File Copyright :</label>
+            <input type="checkbox" id="wd-file-copy" style="margin-top: 5px; margin-bottom: 5px;">
+            <label for="wd-file-copy" style="display: inline-block; margin-left: 10px;">Copyright and license information must be provided for the files before they are published.</label>
+            <br/>
+        
+            <label for="wd-visibility" style="font-weight: bold; display: block; margin-top: 10px;">Visibility :</label>
+            <span style="display: block; margin-left: 80px; margin-bottom: 5px;">If you need to make your course public please contact your administrator/support.</span>
+            <select id="wd-visibility" style="margin-left: 80px; margin-top: 5px;">
+                <option value="private">Course</option>
+                <option value="public">Course 2</option>
+            </select>
+            <br/>
+        
+            <input type="checkbox" id="wd-file-copy-chk" style="margin-left: 80px; margin-top: 5px;">
+            <label for="wd-file-copy-chk" style="display: inline-block; margin-left: 10px;">Include this course in the public course index</label>
+            <br/>
+        </div>
+        
+        <label for="wd-format" style="font-weight: bold;  margin-left: 8px;">Format :</label>
+            <select id="wd-format">
+                <option id="wd-format" selected value="oncampus">On-Campus </option>
+                <option id="wd-format" value="onlinesync">Online (Synchronous) </option>
+                <option id="wd-format" value="onlineasync">Online (Asynchronous) </option>       
+            </select>
+        <br>
+        
+        <label for="wd-paths" style="font-weight: bold;  margin-left: 8px;">Mastery Paths :</label>
+        <input type="checkbox" id="wd-paths">
+        <label for="wd-paths">Enable individual learning paths for students based on assesment</label> <br/>
+        </select>
+
+        <div style="display: flex; align-items: center;  margin-left: 8px;">
+            <label for="wd-desc" style="font-weight: bold; margin-right: 8px;">Description:</label>
+            <textarea id="wd-desc" cols="30" rows="5"></textarea>
+        </div>
+        <p style="margin-left: 100px;"> <a href="#"> more options</a></p>
+        <div style="text-align: right; width: 100%;">
+            <button style="margin-top: 20px;">Update Course Details</button>
+        </div>
+
+    </form>
+</div>
