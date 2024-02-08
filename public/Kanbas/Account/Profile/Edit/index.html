@@ -1,0 +1,87 @@
+<html>
+    <body>
+        <div>
+            <h1>
+                Prathamesh Akole
+            </h1>
+        </div>
+        <div>
+            <form for="edit-profile">
+                <div>
+                    <label for="user-name">Name:*</label>
+                    <input id="user-name" value="Prathamesh Akole"/>
+                    <label for="user-pronouns">Pronouns:</label>
+                    <select id="user-pronouns">
+                        <option selected value="None">None</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">
+                            Female</option>
+                        <option value="Other">Other</option>
+                    </select><br>
+                    <div style="margin-top: 5px;">
+                        <label for="user-title">Title: </label>
+                        <input id="user-title"/>
+                    </div>
+                </div>
+                <div>
+                    <h2>
+                        Contact
+                    </h2>
+                    <p>
+                        No registered services, you can add some on the <a href="">settings</a> page.
+                    </p>
+                </div>
+                <div>
+                    <h2>
+                        Biography
+                    </h2>
+                    <p>
+                        Student, Software Engineer, Web Development, Machine Learning enthusiast. <br>
+                        <textarea cols="50" rows="4">Student, Software Engineer, Web Development, Machine Learning enthusiast. 
+                        </textarea>
+                    </p>
+                </div>
+                <div>
+                    <h2>
+                        Links
+                    </h2>
+                    <ul>
+                        <li>
+                            <a href="">Youtube -> Links to an external site.</a>
+                        </li>
+                    </ul>
+                    <table>
+                        <tr>
+                            <th>
+                                Title
+                            </th>
+                            <th>
+                                URL
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" id="edit-form-title" value="Youtube"> ->
+                            </td>
+                            <td>
+                                <input type="text" value="https://www.youtube.com">
+                            </td>
+                            <td>
+                                <a href="#">Remove</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button"> Add another link</button>
+                            </td>
+                        </tr>
+                    </table>
+                    <button type="button">Cancel</button>
+                    <a href="/Kanbas/Account/Profile/screen.html"><button type="button">Save Profile</button></a><br>
+                    <a href="/Kanbas/Account/Profile/Edit/screen.html"><button type="button">Edit Profile</button></a>
+                    <a href="/Kanbas/Account/Profile/screen.html"><button type="button">Cancel Editing</button></a>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

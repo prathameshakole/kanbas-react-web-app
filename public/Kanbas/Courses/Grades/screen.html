@@ -1,0 +1,364 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/Kanbas/styles.css" />
+    <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
+    <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="/libs/bootstrap/bootstrap-grid-min.css" />
+    <link rel="stylesheet" href="/Kanbas/Courses/Home/style.css" />
+    <link rel="stylesheet" href="/Kanbas/TopNavbar/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/97b8ee8b22.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="d-flex">
+        <div class="d-none d-md-block leftnav">
+            <ul class="wd-kanbas-navigation">
+                <li><a href="#" style="font-size: xxx-large;">
+                        </i>N</a></li>
+                <li><a href="/Kanbas/Account/Profile/screen.html">
+                        <i class="fa fa-user-o"></i><br>Account</a></li>
+                <li>
+                    <a href="/Kanbas/Dashboard/screen.html">
+                        <i class="fa fa-tachometer"></i>Dashboard</a>
+                </li>
+                <li class="wd-active">
+                    <a href="/Kanbas/Courses/Home/screen.html">
+                        <i class="fa fa-book fa-5px"></i><br>Courses</a>
+                </li>
+                <li>
+                    <a href="/Kanbas/Calendar/index.html">
+                        <i class="fa fa-calendar"></i><br>Calendar</a>
+                </li>
+                <li><a href="/Kanbas/Inbox/index.html">
+                        <i class="fa fa-inbox"></i><br>Inbox</a></li>
+                <li><a href="">
+                        <i class="fa fa-clock-o"></i><br>History</a></li>
+                <li><a href="">
+                        <i class="fa fa-television"></i><br>Studio</a></li>
+                <li><a href="">
+                        <i class="fa fa-bars"></i>Commons</a></li>
+                <li><a href="">
+                        <i class="fa fa-question-circle-o"></i><br>Help</a></li>
+            </ul>
+        </div>
+        <div>
+            <div id="topNav" class="d-none d-md-block">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg">
+                        <button type="button">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <ul class="navbar-nav ml-auto">
+                            <div class="nav-item active" style="padding-top: 15px; padding-left: 20px;">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#" class="text-danger">CS5610.36915.202430</a>
+                                    </li>
+                                    <li class="breadcrumb-item active" aria-current="page">Grades</li>
+                                </ol>
+                            </div>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <nav id="alternateNav" class="navbar navbar-expand-md navbar-dark bg-black d-lg-none d-md-none">
+                <button class="btn btn-dark" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseWidthExampleLeft" aria-expanded="false"
+                    aria-controls="collapseWidthExampleLeft">
+                    <i class="fa fa-bars" style="color: red"></i>
+                </button>
+                <div>
+                    <div>
+                        <span class="navbar-text mx-auto">CS5610.36915.202430</span>
+                    </div>
+                    <div style="text-align: center; color: grey;">
+                        Grades
+                    </div>
+                </div>
+                <button class="btn btn-dark" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseWidthExampleRight" aria-expanded="false"
+                    aria-controls="collapseWidthExampleRight">
+                    <i class="fa fa-angle-down" style="color: red"></i>
+                </button>
+            </nav>
+
+            <div class="collapse collapse-horizontal" id="collapseWidthExampleLeft"
+                style="position: fixed; z-index: 2;">
+                <div class="card card-body p-2" style="width: 100vw; height: 100vh;">
+                    <ul style="list-style: none;">
+                        <li>
+                            KANBAS
+                            <button class="btn btn-secondary" style="float: right;" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseWidthExampleLeft"
+                                aria-expanded="false" aria-controls="collapseWidthExampleLeft">
+                                X
+                            </button>
+                        </li>
+                        <li><a href="/Kanbas/Account/Profile/screen.html">
+                                <i class="fa fa-user-o"></i> Account</a></li>
+                        <li class="">
+                            <a href="/Kanbas/Dashboard/screen.html">
+                                <i class="fa fa-tachometer"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="/Kanbas/Courses/Home/screen.html">
+                                <i class="fa fa-book fa-5px"></i> Courses</a>
+                        </li>
+                        <li>
+                            <a href="/Kanbas/Calendar/index.html">
+                                <i class="fa fa-calendar"></i> Calendar</a>
+                        </li>
+                        <li><a href="/Kanbas/Inbox/index.html">
+                                <i class="fa fa-inbox"></i> Inbox</a></li>
+                        <li><a href="">
+                                <i class="fa fa-clock-o"></i> History</a></li>
+                        <li><a href="">
+                                <i class="fa fa-television"></i> Studio</a></li>
+                        <li><a href="">
+                                <i class="fa fa-bars"></i> Commons</a></li>
+                        <li><a href="">
+                                <i class="fa fa-question-circle-o"></i> Help</a></li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="collapse" id="collapseWidthExampleRight" style="position: fixed; z-index: 2;">
+                <div class="card card-body p-2" style="width: 100vw; height: 100vh;">
+                    <ul style="list-style: none;">
+                        <li>
+                            <button class="btn btn-secondary" style="float: right;" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseWidthExampleRight"
+                                aria-expanded="false" aria-controls="collapseWidthExampleRight">
+                                X
+                            </button>
+                        </li>
+                        <li>
+                            <a href="/Kanbas/Courses/Home/screen.html">
+                                <i class="fa fa-home"> Home</i></a>
+                        </li>
+                        <li><a href="/Kanbas/Courses/Modules/screen.html">
+                                <i class="fa fa-bookmark"> Modules</i></a>
+                        </li>
+                        <li><a href="/Kanbas/Courses/Piazza/index.html">
+                                <i class="fa fa-plug"> Piazza</i></a>
+                        </li>
+                        <li><a href="">
+                                <i class="fa fa-plug"> Zoom Meetings</i>
+                            </a>
+                        </li>
+                        <li><a href="/Kanbas/Courses/Assignments/screen.html">
+                                <i class="fa fa-file"> Assignments </i></a></li>
+                        <li><a href="">
+                                <i class="fa fa-rocket"> Quizzes</a></i></li>
+                        <li><a href="/Kanbas/Courses/Grades/screen.html">
+                                <i class="fa fa-book"> Grades</a></i> </li>
+                        <li><a href="">
+                                <i class="fa fa-users"> People</a></i></li>
+                        <li><a href="">
+                                <i class="fa fa-plug"> Panapto Video</a></i></li>
+                        <li><a href="">
+                                <i class="fa fa-comments"> Discussions</a></i>
+                            <i class="fa fa-eye-slash"></i>
+                        </li>
+                        <li><a href="">
+                                <i class="fa fa-bullhorn"> Announcements</a></i>
+                            <i class="fa fa-eye-slash"></i>
+                        </li>
+                        <li><a href="">
+                                <i class="fa fa-file"> Pages</a></i>
+                            <i class="fa fa-eye-slash"></i>
+                        </li>
+                        <li><a href="">
+                                <i class="fa fa-folder"> Files</a></i>
+                            <i class="fa fa-eye-slash"></i>
+                        </li>
+                        <li><a href="">
+                                <i class="fa fa-clipboard"> Rubrics</a></i>
+                            <i class="fa fa-eye-slash"></i>
+                        </li>
+                        <li><a href="">
+                                <i class="fa fa-bullseye"> Outcomes</i></a>
+                            <i class="fa fa-eye-slash"></i>
+                        </li>
+                        <li><a href="">
+                                <i class="fa fa-circle"> Collaborations</i></a>
+                            <i class="fa fa-eye-slash"></i>
+                        </li>
+                        <li><a href="">
+                                <i class="fa fa-book"> Syllabus</i></a>
+                            <i class="fa fa-eye-slash"></i>
+                        </li>
+                        <li><a href="">
+                                <i class="fa fa-plug"> Project Progress(EAB Nabigate) </i></a>
+                        </li>
+                        <li><a href="">
+                                <i class="fa fa-gear"> Settings</i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="d-flex">
+                <div class=" d-none d-md-block">
+                    <ul class="wd-navigation">
+                        <li>
+                            <a href="/Kanbas/Courses/Home/screen.html">
+                                Home</a>
+                        </li>
+                        <li><a href="/Kanbas/Courses/Modules/screen.html">
+                                Modules</a></li>
+                        <li><a href="/Kanbas/Courses/Piazza/index.html">
+                                Piazza</a></li>
+                        <li><a href="">
+                                Zoom Meetings
+                            </a></li>
+                        <li><a href="/Kanbas/Courses/Assignments/screen.html">
+                                Assignments</a></li>
+                        <li><a href="">
+                                Quizzes</a></li>
+                        <li class="wd-active"><a href="/Kanbas/Courses/Grades/screen.html">
+                                Grades</a></li>
+                        <li><a href="">
+                                People</a></li>
+                        <li><a href="">
+                                Panapto Video</a></li>
+                        <li><a href="">
+                                Discussions</a></li>
+                        <li><a href="">
+                                Announcements</a></li>
+                        <li><a href="">
+                                Pages</a></li>
+                        <li><a href="">
+                                Files</a></li>
+                        <li><a href="">
+                                Rubrics</a></li>
+                        <li><a href="">
+                                Outcomes</a></li>
+                        <li><a href="">
+                                Collaborations</a></li>
+                        <li><a href="">
+                                Syllabus</a></li>
+                        <li><a href="">
+                                Settings</a></li>
+                    </ul>
+                </div>
+                <div class="d-md-block content ps-4" style="padding-left: 5% !important;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div>
+                                    <div class="d-flex justify-content-end">
+                                        <button class="btn btn-light btn-outline-secondary float-end me-2">
+                                            <i class="fa fa-file-import"></i> Import</button>
+                                        <div class="dropdown float-end" style="display: inline-block;">
+                                            <button class="btn btn-outline-secondary dropdown-toggle me-2" type="button"
+                                                id="dropdownMenu2" aria-haspopup="true" data-toggle="dropdown"
+                                                aria-expanded="false">
+                                                <i class="fa fa-file-export"></i> Export
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                                <button class="dropdown-item"><a href="#"></a>Export All</button>
+                                            </div>
+                                        </div>
+
+                                        <button type="button" class="btn btn-md btn-secondary">
+                                            <i class="fa fa-gear fa-lg"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <h3 class="mt-4 mb-3">Student Names</h3>
+                                        <input type="text" name="student-name" id="student-name"
+                                            class="form-control mb-3" placeholder="Search Students">
+                                    </div>
+                                    <div class="col">
+                                        <h3 class="mt-4 mb-3">Assignment Names</h3>
+                                        <input type="text" name="ass-name" id="ass-name" class="form-control mb-3"
+                                            placeholder="Search Assignments">
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <button type="button" class="btn btn-secondary mb-4">
+                                        <i class="fa fa-filter fa-lg"></i>
+                                        Apply Filters
+                                    </button>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-striped text-center m-0 p-0">
+                                        <thead>
+                                            <tr>
+                                                <th class="m-0 p-3">Student Name</th>
+                                                <th class="m-0 p-3">A1 - SETUP Out of 100</th>
+                                                <th class="m-0 p-3">A2 - HTML Out of 100</th>
+                                                <th class="m-0 p-3">A3 - CSS Out of 100</th>
+                                                <th class="m-0 p-3">A4 - BOOTSTRAP Out of 100</th>
+                                                <th class="m-0 p-3">A5 - JAVASCRIPT Out of 100</th>
+                                                <th class="m-0 p-3">A6 - REACT Out of 100</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="m-0 p-3">John Nolan</td>
+                                                <td class="m-0 p-3">96</td>
+                                                <td class="m-0 p-3">95</td>
+                                                <td class="m-0 p-3">89</td>
+                                                <td class="m-0 p-3"><input type="text" value="83"
+                                                        class="form-control text-center"></td>
+                                                <td class="m-0 p-3">90</td>
+                                                <td class="m-0 p-3">92</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="m-0 p-3">Lucy Chen</td>
+                                                <td class="m-0 p-3">82</td>
+                                                <td class="m-0 p-3">90</td>
+                                                <td class="m-0 p-3"><input type="text" value="87"
+                                                        class="form-control text-center"></td>
+                                                <td class="m-0 p-3">93</td>
+                                                <td class="m-0 p-3">81</td>
+                                                <td class="m-0 p-3">72</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="m-0 p-3">Angela Lopez</td>
+                                                <td class="m-0 p-3">78</td>
+                                                <td class="m-0 p-3">85</td>
+                                                <td class="m-0 p-3">75</td>
+                                                <td class="m-0 p-3">84</td>
+                                                <td class="m-0 p-3">79</td>
+                                                <td class="m-0 p-3"><input type="text" value="90"
+                                                        class="form-control text-center"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="m-0 p-3">Ajay Singh</td>
+                                                <td class="m-0 p-3"><input type="text" value="80"
+                                                        class="form-control text-center"></td>
+                                                <td class="m-0 p-3">78</td>
+                                                <td class="m-0 p-3">84</td>
+                                                <td class="m-0 p-3"><input type="text" value="84"
+                                                        class="form-control text-center"></td>
+                                                <td class="m-0 p-3">92</td>
+                                                <td class="m-0 p-3"><input type="text" value="88"
+                                                        class="form-control text-center"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
