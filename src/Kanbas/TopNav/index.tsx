@@ -32,9 +32,11 @@ function TopNav() {
                                 </ol>
                             </div>
                         </ul>
-                        <button className="wd-student-view btn btn-outline-secondary" type="button" style={{ marginLeft: '50%' }}>
-                            <FontAwesomeIcon icon={faGlasses} /> Student View
-                        </button>
+                        {['Modules', 'Home'].includes(screen) && ( // Check if screen is Modules or Home
+                            <button className="wd-student-view btn btn-outline-secondary" type="button" style={{ marginLeft: '50%' }}>
+                                <FontAwesomeIcon icon={faGlasses} /> Student View
+                            </button>
+                        )}
                     </nav>
                 </div>
             </div>
