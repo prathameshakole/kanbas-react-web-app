@@ -1,0 +1,14 @@
+.wd-module-body{
+    width: 58vw;
+}
+
+.wd-module-status{
+    margin-left: 50px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+    .wd-module-body{
+        width: 75vw;
+    }
+
+}

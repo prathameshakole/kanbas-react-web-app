@@ -1,0 +1,48 @@
+.wd-kanbas-navigation {
+    background-color: black;
+    list-style: none;
+    padding: 0px;  margin: 0px;
+    font-family: sans-serif;
+    width: 85px;
+    position: fixed;
+    top: 0;
+    height: 100%; 
+  }
+  .wd-kanbas-navigation li {
+    padding: 5px;     margin-bottom: 10px;
+    font-size: 0.8em;  text-align: center;
+     justify-content: center;
+    align-items: center;
+  }
+  .wd-kanbas-navigation li.wd-active {
+    background-color: white;
+  }
+  .wd-kanbas-navigation li.wd-active a {
+    color: red;
+  }
+  .wd-kanbas-navigation a {
+    color: white;
+    text-decoration: none;
+    margin-top: 0;
+  }
+  .wd-kanbas-navigation a i {
+    color: red;
+    font-size: 2em;
+    margin-bottom: 5px;
+  }
+
+  .wd-icon{
+    color: red;
+  }
+
+  .wd-neu-logo{
+    display: block;
+    overflow: hidden;
+    background-image: url(https://instructure-uploads.s3.amazonaws.com/account_145230000000000001/attachments/949/NU_MonoLVX_RGB_RW.png);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform .3s;
+    height: 65px;
+  }
+  

@@ -1,0 +1,38 @@
+.wd-assg {
+    
+    top: 0;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+.wd-assg ul a li i{
+    vertical-align: middle;
+}
+
+.list-group {
+    border-radius: 0; /* Remove rounded corners */
+}
+
+/* Override Bootstrap list-group-item */
+.list-group-item {
+    border-radius: 0; /* Remove rounded corners */
+    padding: 1px !important;
+
+}
+
+.wd-check-icon {
+    margin: 5px;
+    padding: 2px; color: green;
+}
+
+.wd-ellipsis {
+    margin: 5px 5px 5px 0px; 
+    padding: 2px;
+}
+
+a{
+    margin-top: 0px;
+}
+
+.wd-assignment-body {
+    width: 75vw;
+}
