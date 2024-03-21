@@ -1,5 +1,5 @@
 import React from 'react';
-import { assignments, courses } from '../Database';
+import db from '../Database';
 import { useLocation, useParams } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faBars, faBook, faBookmark, faBullhorn, faBullseye, faCalendar, faCircle, faClipboard, faComment, faEyeSlash, faFile, faFolder, faGear, faGlasses, faHistory, faHome, faInbox, faPlug, faQuestionCircle, faRocket, faTachometer, faTelevision, faUser, faUsers } from '@fortawesome/free-solid-svg-icons';
@@ -8,7 +8,7 @@ function TopNav() {
     const { courseId } = useParams();
     const { pathname } = useLocation();
     const [empty, kanbas, coursesloc, id, screen, asid] = pathname.split("/");
-    const course = courses.find((course) => course._id === courseId);
+    const course = db.courses.find((course) => course._id === courseId);
     return (
         <>
             <div id="topNav" className="d-none d-md-block">
@@ -23,7 +23,7 @@ function TopNav() {
                                     <li className="breadcrumb-item"><a href="#" className="text-danger">{course?.name}</a></li>
                                     <li className="breadcrumb-separator">{' '}  {'>'}</li>
                                     <li className="breadcrumb-item active" aria-current="page">{screen}</li>
-                                    {assignments && asid && (
+                                    {db.assignments && asid && (
                                         <>
                                             <li className="breadcrumb-separator"> {'  >  '} </li>
                                             <li className="breadcrumb-item active"> {' '}{asid}</li>

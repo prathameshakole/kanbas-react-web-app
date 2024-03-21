@@ -1,95 +1,63 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import { assignments } from "../../../Database";
+import db from "../../../Database";
 import Assignments from "..";
 import { title } from "process";
 import "./index.css"
+import {
+  addAssignment,
+  setAssignment,
+  updateAssignment,
+} from '../assignmentReducer'
+import { useDispatch, useSelector } from "react-redux";
+import { KanbasState } from "../../../store";
 function AssignmentEditor() {
   const { assignmentId } = useParams();
-  const assignment = assignments.find(
-    (assignment) => assignment._id === assignmentId);
-
+  const assignments = useSelector((state: KanbasState) => state.assignmentReducer.assignments);
   const { courseId } = useParams();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const handleSave = () => {
-    console.log("Actually saving assignment TBD in later assignments");
+  const assignment = useSelector((state: KanbasState) => state.assignmentReducer.assignment);
+
+  useEffect(() => {
+    // Fetch assignment data using assignmentId and set it in the state
+    if (assignmentId && assignments.length > 0) {
+      const foundAssignment = assignments.find(assignment => assignment.id === assignmentId);
+      if (foundAssignment) {
+        dispatch(setAssignment(foundAssignment));
+      }
+    }
+  }, [assignmentId, assignments, dispatch]);
+
+  const handle = () => {
+    if (assignmentId !== "AssignmentEditor") {
+      dispatch(updateAssignment(assignment))
+    }
+    else {
+      dispatch(addAssignment({ ...assignment, course: courseId }))
+    }
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
-  };
+  }
+
   return (
     <div>
       <div className="p-4 wd-editor-body">
         <h5>Assignment Name</h5>
-        <input value={assignment?.title}
+        <input value={assignment?.title || ""} onChange={(e) => dispatch(setAssignment({ ...assignment, title: e.target.value }))}
           className="form-control mb-2" />
-        <textarea className="form-control">This is the assignment description</textarea>
+        <textarea className="form-control" onChange={(e) => dispatch(setAssignment({ ...assignment, description: e.target.value }))} value={assignment.description || ""}></textarea>
       </div>
       <div className="row wd-row p-4">
         <div className="col-2"><h6>Points</h6></div>
-        <div className="col-6"><input className="form-control" title="points" value="100" /></div>
-      </div>
-      <div className="row wd-row p-4">
-        <div className="col-2"><h6>Assignment Group</h6></div>
-        <div className="col-6">
-          <select className="form-select">
-            <option>Assignment</option>
-            <option>Quiz</option>
-          </select>
-        </div>
-      </div>
-      <div className="row wd-row p-4">
-        <div className="col-2"><h6>Display Grade as</h6></div>
-        <div className="col-6">
-          <select className="form-select">
-            <option>Percentage</option>
-            <option>Points</option>
-          </select>
-        </div>
-      </div>
-      <div className="row wd-row p-4">
-        <div className="col-2"></div>
-        <div className="col-6 form-check">
-          <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-          <label className="form-check-label" htmlFor="flexCheckDefault">
-            Do not count this assignment towards the final grade
-          </label>
-        </div>
-      </div>
-      <div className="row wd-row p-4">
-        <div className="col-2"><h6>Submission Type</h6></div>
-        <div className="card col-6">
-          <div className="card-body">
-            <select className="form-select">
-              <option>Online</option>
-              <option>Offline</option>
-            </select>
-            <br />
-            <p>Online Entry Options</p><br />
-            <input className="form-check-input" type="checkbox" value="" id="c1" />
-            <label className="form-check-label" htmlFor="c1"> Text Entry
-            </label><br /><br />
-            <input className="form-check-input" type="checkbox" value="" id="c2" />
-            <label className="form-check-label" htmlFor="c2"> Website URL
-            </label><br /><br />
-            <input className="form-check-input" type="checkbox" value="" id="c3" />
-            <label className="form-check-label" htmlFor="c3"> Media Recordings
-            </label><br /><br />
-            <input className="form-check-input" type="checkbox" value="" id="c4" />
-            <label className="form-check-label" htmlFor="c4"> Student Annotation
-            </label><br /><br />
-            <input className="form-check-input" type="checkbox" value="" id="c5" />
-            <label className="form-check-label" htmlFor="c5"> File Uploads
-            </label><br />
-          </div>
-        </div>
+        <div className="col-6"><input className="form-control" title="points" onChange={(e) => dispatch(setAssignment({ ...assignment, points: e.target.value }))} value={assignment.points} /></div>
       </div>
       <div className="row wd-row p-4">
         <div className="col-2"><h6>Assign</h6></div>
         <div className="card col-6">
           <div className="card-body">
-            <p>Assign To</p>
-            <input className="form-control" title="assignto" value="Everyone" /><br />
             <p>Due</p>
-            <input type="date" className="form-control" title="due" value="2023-10-01" /><br />
+            <input type="date" className="form-control" title = "due" value={assignment.due || ""}
+                        onChange={(e) => dispatch(setAssignment({ ...assignment, due: e.target.value })) }/><br />
             <div className="row">
               <div className="col-6">
                 <p>Available From</p>
@@ -100,10 +68,12 @@ function AssignmentEditor() {
             </div>
             <div className="row">
               <div className="col-6">
-                <input type="date" className="form-control" title="avail" value="2023-10-01" /><br />
+                <input type="date" className="form-control" title="avail" value={assignment.availFrom || ""}
+                  onChange={(e) => dispatch(setAssignment({ ...assignment, availFrom: e.target.value }))} /><br />
               </div>
               <div className="col-6">
-                <input type="date" className="form-control" title="until" value="2023-10-11" /><br />
+              <input type="date" className="form-control" title = "until" value={assignment.availTill || ""}
+                                onChange={(e) => dispatch(setAssignment({ ...assignment, availTill: e.target.value })) }/><br />
               </div>
             </div>
           </div>
@@ -111,7 +81,7 @@ function AssignmentEditor() {
       </div>
       <hr />
       <div className="float-end">
-        <button onClick={handleSave} className="btn btn-success ms-2 float-end">
+        <button onClick={handle} className="btn btn-success ms-2 float-end">
           Save
         </button>
         <Link to={`/Kanbas/Courses/${courseId}/Assignments`}

@@ -1,12 +1,12 @@
-import { assignments, enrollments, grades, users } from "../../Database";
+import db from "../../Database";
 import { useParams } from "react-router-dom";
 import "./index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileExport, faFileImport, faFilter, faGear, faStar } from "@fortawesome/free-solid-svg-icons";
 function Grades() {
   const { courseId } = useParams();
-  const as = assignments.filter((assignment) => assignment.course === courseId);
-  const es = enrollments.filter((enrollment) => enrollment.course === courseId);
+  const as = db.assignments.filter((assignment) => assignment.course === courseId);
+  const es = db.enrollments.filter((enrollment) => enrollment.course === courseId);
   return (
     <div className="wd-grades">
       <h1>Grades</h1>
@@ -58,12 +58,12 @@ function Grades() {
 
           <tbody>
             {es.map((enrollment) => {
-              const user = users.find((user) => user._id === enrollment.user);
+              const user = db.users.find((user) => user._id === enrollment.user);
               return (
                 <tr>
                   <td>{user?.firstName} {user?.lastName}</td>
                   {as.map((assignment) => {
-                    const grade = grades.find(
+                    const grade = db.grades.find(
                       (grade) => grade.student === enrollment.user && grade.assignment === assignment._id);
                     return (<td>{grade?.grade || ""}</td>);
                   })}

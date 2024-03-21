@@ -1,38 +1,69 @@
 .wd-assg {
-    
+
     top: 0;
     text-decoration: none;
     font-family: sans-serif;
 }
-.wd-assg ul a li i{
+
+.wd-assg ul a li i {
     vertical-align: middle;
 }
 
 .list-group {
-    border-radius: 0; /* Remove rounded corners */
+    border-radius: 0;
+    /* Remove rounded corners */
 }
 
 /* Override Bootstrap list-group-item */
 .list-group-item {
-    border-radius: 0; /* Remove rounded corners */
+    border-radius: 0;
+    /* Remove rounded corners */
     padding: 1px !important;
+    vertical-align: top;
 
 }
 
 .wd-check-icon {
     margin: 5px;
-    padding: 2px; color: green;
+    padding: 2px;
+    color: green;
 }
 
 .wd-ellipsis {
-    margin: 5px 5px 5px 0px; 
+    margin: 5px 5px 5px 0px;
     padding: 2px;
 }
 
-a{
+a {
     margin-top: 0px;
 }
 
 .wd-assignment-body {
     width: 75vw;
+}
+
+.confirmation-dialog {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.confirmation-dialog p {
+    margin-bottom: 10px;
+}
+
+.confirmation-dialog button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
