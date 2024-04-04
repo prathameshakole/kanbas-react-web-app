@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaCheckCircle, FaEllipsisV, FaPlusCircle } from "react-icons/fa";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import db from "../../Database";
@@ -7,38 +7,57 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./index.css"
 import { useDispatch, useSelector } from "react-redux";
 import {
-  deleteAssignment, setAssignment,
+  deleteAssignment, setAssignment,setAssignments,
 } from './assignmentReducer'
 import { KanbasState } from "../../store";
+import * as client from "./client.js";
+
 
 function Assignments() {
   const { courseId } = useParams();
   const assignments = useSelector((state: KanbasState) => state.assignmentReducer.assignments);
   const assignment = useSelector((state: KanbasState) => state.assignmentReducer.assignment);
+
+  useEffect(() => {
+    client.findAssignmentsForCourse(courseId)
+      .then((assignments: any) =>
+        dispatch(setAssignments(assignments))
+    );
+  }, [courseId]);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const handleAdd = () => {
     navigate(`/Kanbas/Courses/${courseId}/Assignments/AssignmentEditor`);
   };
+
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [assignmentToDelete, setAssignmentToDelete] = useState(null);
-  const handleDelete = (assignmentId: React.SetStateAction<null>) => {
-    setAssignmentToDelete(assignmentId);
-    setShowConfirmation(true);
-  };
 
   const confirmDelete = () => {
-    dispatch(deleteAssignment(assignmentToDelete));
-    setShowConfirmation(false);
+    if (assignmentToDelete) {
+      client.deleteAssignment(assignmentToDelete).then((status) => {
+        dispatch(deleteAssignment(assignmentToDelete));
+        setShowConfirmation(false);
+        setAssignmentToDelete(null);
+      });
+    }
   };
 
   const cancelDelete = () => {
-    setAssignmentToDelete(null);
     setShowConfirmation(false);
+    setAssignmentToDelete(null);
+  };
+
+  const handleDeleteAssignment = (assignmentId: any) => {
+    setShowConfirmation(true);
+    setAssignmentToDelete(assignmentId);
   };
 
   const assignmentList = db.assignments.filter(
     (assignment) => assignment.course === courseId);
+    
   return (
     <div className="wd-assignment-body">
       <input style={{ width: '400px', display: 'inline-block' }} id="search" title="search"
@@ -59,11 +78,12 @@ function Assignments() {
             </span>
           </div>
           <ul className="list-group">
-            {assignments
+            {assignments.length > 0 ? (<>
+              {assignments
               .filter((assignment) => assignment.course === courseId)
               .map((assignment, index) => (
                 <li key={index} className="list-group-item wd-lg-item">
-                  <Link key={assignment._id} to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}><FontAwesomeIcon icon={faEdit} style={{ color: 'green', marginLeft: '3px' }} /></Link>
+                  <Link key={index} to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}><FontAwesomeIcon icon={faEdit} style={{ color: 'green', marginLeft: '3px' }} /></Link>
                   <Link
                     key={assignment._id}
                     to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`} style={{ textDecoration: 'none' }}
@@ -72,14 +92,17 @@ function Assignments() {
                     {assignment.description}
                   </Link>
                   <button style={{ display: "inline-block" }}
-                    onClick={() => handleDelete(assignment._id)} className="float-end btn btn-danger">
+                    onClick={() => handleDeleteAssignment(assignment._id)} className="float-end btn btn-danger">
                     Delete
                   </button>
                   <span className="float-end">
                     <FaCheckCircle className="text-success" /><FaEllipsisV className="ms-2" /></span>
                 </li>
               ))}
-
+            </>
+            ) : (
+              null
+            )}
           </ul>
         </li>
       </ul>

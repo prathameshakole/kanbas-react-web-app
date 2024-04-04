@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import rocket from "../Images/rocket.png"
-import db from "../Database";
 import "./index.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faPen, faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -11,11 +10,13 @@ function Dashboard({ courses, course, setCourse, addNewCourse,
     addNewCourse: () => void; deleteCourse: (course: any) => void;
     updateCourse: () => void;
   }) {
+  console.log(courses);
   return (
     <div className="p-4">
       <h1>Dashboard</h1><hr />
       <h5>New Course</h5>
       <div style={{marginBottom: '10px'}}>
+
       <input value={course.name} className="form-control wd-input"
         onChange={(e) => setCourse({ ...course, name: e.target.value })} />
       <input value={course.number} className="form-control wd-input"
@@ -25,6 +26,7 @@ function Dashboard({ courses, course, setCourse, addNewCourse,
       <input value={course.endDate} className="form-control wd-input" type="date"
         onChange={(e) => setCourse({ ...course, endDate: e.target.value })} />
       </div>
+
       <button className="btn btn-success" onClick={addNewCourse} style={{marginRight: '5px', marginBottom: '5px'}}>
         Add
       </button>

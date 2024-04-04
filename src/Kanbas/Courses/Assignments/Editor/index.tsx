@@ -1,16 +1,16 @@
 import React, { useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import db from "../../../Database";
-import Assignments from "..";
-import { title } from "process";
 import "./index.css"
 import {
   addAssignment,
   setAssignment,
   updateAssignment,
+  setAssignments
 } from '../assignmentReducer'
 import { useDispatch, useSelector } from "react-redux";
 import { KanbasState } from "../../../store";
+import * as client from "../client.js";
+
 function AssignmentEditor() {
   const { assignmentId } = useParams();
   const assignments = useSelector((state: KanbasState) => state.assignmentReducer.assignments);
@@ -20,24 +20,34 @@ function AssignmentEditor() {
   const assignment = useSelector((state: KanbasState) => state.assignmentReducer.assignment);
 
   useEffect(() => {
-    // Fetch assignment data using assignmentId and set it in the state
     if (assignmentId && assignments.length > 0) {
       const foundAssignment = assignments.find(assignment => assignment.id === assignmentId);
       if (foundAssignment) {
-        dispatch(setAssignment(foundAssignment));
+        dispatch(setAssignments(foundAssignment));
       }
     }
   }, [assignmentId, assignments, dispatch]);
 
   const handle = () => {
     if (assignmentId !== "AssignmentEditor") {
-      dispatch(updateAssignment(assignment))
+      handleUpdateAssignment();
     }
     else {
-      dispatch(addAssignment({ ...assignment, course: courseId }))
+      handleAddAssignment();
     }
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   }
+
+  const handleAddAssignment = () => {
+    client.createAssignment(courseId, assignment).then((assignment) => {
+        dispatch(addAssignment({...assignment, course: courseId}));
+    });
+  };
+
+  const handleUpdateAssignment = async () => {
+    const status = await client.updateAssignment(assignment);
+    dispatch(updateAssignment(assignment));
+  };
 
   return (
     <div>
