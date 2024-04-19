@@ -13,8 +13,8 @@ function WorkingWithObjects() {
         description: "Learn the basics of web development using HTML, CSS, and JavaScript.",
         course: "Web Development Bootcamp",
     });
-    const ASSIGNMENT_URL = "http://localhost:4000/a5/assignment"
-    const MODULE_URL = "http://localhost:4000/a5/module";
+    const ASSIGNMENT_URL = "https://kanbas-node-server-app-d1hp.onrender.com/a5/assignment"
+    const MODULE_URL = "https://kanbas-node-server-app-d1hp.onrender.com/a5/module";
 
     const fetchAssignment = async () => {
         const response = await axios.get(`${ASSIGNMENT_URL}`);
@@ -64,12 +64,12 @@ function WorkingWithObjects() {
             </a>
 
             <h4>Retrieving Objects</h4>
-            <a className="btn btn-primary" href="http://localhost:4000/a5/assignment">
+            <a className="btn btn-primary" href="https://kanbas-node-server-app-d1hp.onrender.com/a5/assignment">
                 Get Assignment
             </a>
             <br />
             <h4>Retrieving Properties</h4>
-            <a className="btn btn-primary" href="http://localhost:4000/a5/assignment/title">
+            <a className="btn btn-primary" href="https://kanbas-node-server-app-d1hp.onrender.com/a5/assignment/title">
                 Get Title
             </a>
             <div className="mb-4">
