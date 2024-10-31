@@ -1,7 +1,7 @@
 {
   "name": "kanbas-react-web-app",
   "version": "0.1.0",
-  "homepage": "https://prathameshakole.github.io/kanbas-react-web-app",
+  "homepage": "https://kanbas.prathameshakole.com",
   "private": true,
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
