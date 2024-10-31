@@ -1,0 +1,12 @@
+.wd-home-page{
+    width: 60%; padding-left: 5% !important;
+}
+
+.wd-home-sub{
+    display: flex;
+    justify-content: end;
+}
+
+.wd-course-status{
+    color: #2d3b45; font-weight: 500
+}

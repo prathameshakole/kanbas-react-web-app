@@ -1,0 +1,45 @@
+.wd-top-nav-bar {
+    margin-left: 10px;
+     
+    text-decoration: none;
+    padding-left: 10px;
+    padding-top: 15px;
+    padding-bottom: 0;
+   
+    top: 0;
+    background-color: white;
+    z-index: 1;
+}
+.wd-top-nav-bar nav{
+    display: inline-block;
+    text-decoration: none;
+    font-family: sans-serif;
+    padding-left: 70px;
+    font-size: 20px;
+}
+.wd-top-nav-bar nav a{
+    text-decoration: none;
+    color: rgb(206, 2, 2);
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .navbar {
+        justify-content: start !important;
+    }
+    
+    .wd-student-view {
+        margin-left: 200px !important;
+    }
+
+}
+
+a{
+    text-decoration: none;
+    color: red;
+    margin-top: 25px;
+}
+
+li{
+    font-size: large;
+    color: red;
+}
